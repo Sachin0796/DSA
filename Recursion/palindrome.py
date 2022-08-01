@@ -1,8 +1,8 @@
 def palindrome(string1, start, end):
     if (start>=end):
-        return 1
+        return 'Palindrome'
     if (string1[start]!=string1[end]):
-        return 0
+        return 'Not Palindrome'
     return palindrome(string1, start+1, end-1)    
 
 string1='abcba'
