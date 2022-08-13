@@ -1,13 +1,20 @@
-# # find all the possible permutations of a given array
-
-def permutations(arr, index, tempAns):
-    if index==len(arr):
-        return tempAns
-
+# find all the possible permutations of a given array
+# Need to check why append is not working properly
+tempAns=[]
+def permutations(arr, index):    
+    if index==len(arr):                                                
+        tempAns.append(arr)
+        print("Here is arr:",arr) 
+        return    
     for i in range(index,len(arr)):
-        arr[i], arr[index]=arr[index], arr[i]        
-        tempAns+=permutations(arr, index+1,tempAns)
-        arr[i], arr[index]=arr[index], arr[i]
-        return tempAns
+        arr[i],arr[index]=arr[index],arr[i]        
+        permutations(arr, index+1)
+        arr[i],arr[index]=arr[index],arr[i]
+    return
 
-print(permutations(['123'],0,''))
+permutations([1,2,3],0)
+print(tempAns)
+
+# from itertools import permutations
+# for i in permutations(list('123')):
+#     print(i)

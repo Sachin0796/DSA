@@ -1,4 +1,4 @@
-def minSum(a, b, tempSum, index, takeMin):
+def minSum(a, b, tempSum, index):
     a.sort()
     b.sort()
     result=0
@@ -7,4 +7,4 @@ def minSum(a, b, tempSum, index, takeMin):
     return result
 
 
-print(minSum([3, 1, 1], [6, 5, 4], 0, 0, 50000))
+print(minSum([3, 1, 1], [6, 5, 4], 0, 0))
