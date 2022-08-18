@@ -3,11 +3,10 @@
 tempAns=[]
 def permutations1(arr, index):    
     if index==len(arr):                                                
-        tempAns.append(arr)
-        print("Here is arr:",arr) 
+        tempAns.append(arr.copy())        
         return    
     for i in range(index,len(arr)):
-        arr[i],arr[index]=arr[index],arr[i]        
+        arr[i],arr[index]=arr[index],arr[i]    
         permutations1(arr, index+1)
         arr[i],arr[index]=arr[index],arr[i]
     return
@@ -15,6 +14,7 @@ def permutations1(arr, index):
 permutations1([1,2,3],0)
 print(tempAns)
 
+# in built code
 # from itertools import permutations
 # for i in permutations(list('123')):
 #     print(i)
