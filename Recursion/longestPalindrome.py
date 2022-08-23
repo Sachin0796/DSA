@@ -18,8 +18,3 @@ for i in range(len(s)):
         findPalindrome(s[i:j],0,len(s[i:j])-1)
     
 print(tempAns[0])
-
-s= ".1"
-print(s.split('.'))
-
-print(8//10)
