@@ -22,3 +22,8 @@ class Solution:
         print( [first, last])
 s=Solution()
 s.solve(A,B)
+
+
+arr=[1, 2, 3]
+sum1= sum(arr)
+print(sum1)

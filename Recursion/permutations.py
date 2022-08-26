@@ -7,8 +7,10 @@ def permutations1(arr, index):
         return    
     for i in range(index,len(arr)):
         arr[i],arr[index]=arr[index],arr[i]    
+        print(f"Before permutation: index:{index} and i:{i} and arr:{arr}")
         permutations1(arr, index+1)
         arr[i],arr[index]=arr[index],arr[i]
+        print(f"After permutation: index:{index} and i:{i} and arr:{arr}")
     return
 
 permutations1([1,2,3],0)
