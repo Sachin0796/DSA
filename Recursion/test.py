@@ -1,18 +1,23 @@
-nums=[1,2,3,1]
-visited = [False] * len(nums)
-def robSum(nums, index, tempSum):
-    if index >= len(nums):
-        return tempSum
-    
-    if visited[index] == True:
-        robSum(nums, index+2, tempSum + nums[index])
-    else:
-        visited[index] = True
-        a = robSum(nums, index+2, tempSum + nums[index])
-        
-        visited[index] = False
-        b = robSum(nums, index+1, tempSum)
-        
-        return max(a, b)
+# finding all subset
+# Not working
+# def subset(arr, tempAns, index):
+#     if index==len(tempAns):
+#         return tempAns
+#     a=tempAns.append(arr[index])
+#     subset(arr,tempAns,index+1)
+#     b=tempAns.pop()
+#     subset(arr, tempAns, index+1)
+#     return a, b
 
-print(robSum(nums, 0, 0))
+# print(subset('123',[],0))
+
+def subset1(arr, tempAns, index):
+    if index==len(arr):
+        return tempAns
+    #take
+    a=subset1(arr, tempAns+arr[index],index+1)
+    #not take
+    b=subset1(arr, tempAns,index+1)
+    return a+' '+b
+
+print(subset1('123','',0))
