@@ -1,19 +1,8 @@
-def searchMaze(arr, n):
-        
-    ans= []
-    def findPaths(arr, i, j, n, m, tempAns, ans):
-        if i == n-1 and j == m-1 and arr[i][j] == 1:
-            ans.append(tempAns)
-            return
-        if i == n or j == m or arr[i][j] != 1:
-            return
-        findPaths(arr, i+1, j, n, m, tempAns+'D', ans)
-        findPaths(arr, i-1, j, n, m, tempAns+'U', ans)
-        findPaths(arr, i, j+1, n, m, tempAns+'R', ans)
-        findPaths(arr, i, j-1, n, m, tempAns+'L', ans)
-    
-    findPaths(arr, 0, 0, n, n, '', ans)
-    return ans
+chessBoard =[[0 for i in range(4)] for j in range(4)]
+chessBoard[0][0] = "Q"
+print(chessBoard)
 
-
-searchMaze([[1,0],[1,1]], 2)
+s='aba'
+a = s[0:3]
+if a == a[::-1]:
+    print("yes")
