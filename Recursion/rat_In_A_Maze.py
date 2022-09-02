@@ -25,5 +25,5 @@ def searchMaze(arr, n):
         return 
     
     findPaths(arr, 0, 0, n, n, '', ans)
-    ans.sort()
+    ans.sort() # I was missing this
     return ans

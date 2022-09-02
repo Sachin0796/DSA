@@ -17,5 +17,5 @@ def nRangeCombination(k, n, tempAns, index):
     nRangeCombination(k, n, tempAns+k[index], index+1)    
     nRangeCombination(k, n, tempAns, index+1)
     
-nRangeCombination(['1','2','3','4'], 2, '', 0)
+nRangeCombination(['1','2','3','4'], 3, '', 0)
 print(ans)

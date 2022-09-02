@@ -6,11 +6,9 @@ def permutations1(arr, index):
         tempAns.append(arr.copy())        
         return    
     for i in range(index,len(arr)):
-        arr[i],arr[index]=arr[index],arr[i]    
-        print(f"Before permutation: index:{index} and i:{i} and arr:{arr}")
+        arr[i],arr[index]=arr[index],arr[i]            
         permutations1(arr, index+1)
-        arr[i],arr[index]=arr[index],arr[i]
-        print(f"After permutation: index:{index} and i:{i} and arr:{arr}")
+        arr[i],arr[index]=arr[index],arr[i]    
     return
 
 permutations1([1,2,3],0)
