@@ -1,3 +1,6 @@
+from winreg import DeleteValue
+
+
 class Node:
     def __init__(self, dataval=None):
         self.dataval = dataval
@@ -42,6 +45,34 @@ class SlinkedList:
         Newnode.nextval = RefNode.nextval
         RefNode.nextval = Newnode                        
 
+    def deleteValue(self, data):
+        currentNode = self.headNodeAddr
+        
+        # empty list
+        if currentNode is None:
+            return
+
+# headNode -> ("Sunday", MonAddr) ->  ("Monday", TuesAddr) - > ("Tuesday", WedAddr) - > ("Wednesday", Thursday) - > ("Thursday", None)        
+# headNode ->  ("Monday", TuesAddr) - > ("Tuesday", WedAddr) - > ("Wednesday", Thursday) - > ("Thursday", None)        
+
+        # firstNode Deletion
+        if currentNode is not None:
+            if currentNode.dataval == data:
+                self.headNodeAddr = currentNode.nextval
+                currentNode = None
+                return
+# headNode -> ("Sunday", MonAddr) ->  ("Monday", TuesAddr) - > ("Tuesday", WedAddr) - > ("Wednesday", Thursday) - > ("Thursday", None)   
+# headNode -> ("Sunday", TuesAddr) - > ("Tuesday", WedAddr) - > ("Wednesday", Thursday) - > ("Thursday", None)   
+
+        # deletion from the 2nd node onwards
+        while currentNode is not None:
+            if currentNode.dataval == data:
+                break
+            prev = currentNode # sun
+            currentNode = currentNode.nextval # mon
+
+        prev.nextval = currentNode.nextval
+        currentNode = None
 
 sl = SlinkedList()
 
@@ -67,3 +98,8 @@ sl.InBetween(node3 , "Thursday")
 
 sl.AtEnd("Saturday")
 # sl.printList()
+
+sl.deleteValue("Monday")
+sl.deleteValue("Tuesday")
+sl.deleteValue("Saturday")
+sl.printList()
