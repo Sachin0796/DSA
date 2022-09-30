@@ -14,7 +14,7 @@ def combSum(arr, index, tempAns, target, tempSum):
     #not take
     combSum(arr, index + 1, tempAns, target, tempSum)
         
-arr=[3,12,9,11,6,7,8,5,4,3]
+arr=[4,7,8]
 arr.sort()
 combSum(arr,0, '', 15, 0)
 print(ans)
