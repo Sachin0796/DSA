@@ -2,6 +2,11 @@
 
 # Problem link: https://leetcode.com/problems/n-queens/
 
+# Approach to the problem and some assumptions:
+
+# We are going row by row, and we are making sure that each row will have a queen in it otherwise we will not move to the next row. So considering this, we can start the row value with 0 i.e. i and we can loop through our columns using j and place the queen in all the columns using i,j in chessBoard untill we see that row count i.e. i(starting 0)  == n
+
+
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
         ans = []

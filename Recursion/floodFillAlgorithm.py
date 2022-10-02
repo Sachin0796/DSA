@@ -1,3 +1,4 @@
+
 # This is a runnable code in leetcode. Same can be used in coding ninja. Sample input can be taken from platform. Below is the link for the code:
 
 # Leetcode - https://leetcode.com/problems/flood-fill/submissions/
@@ -16,7 +17,7 @@ class Solution:
             flood(image, x, y-1, oldColor, newColor, n, m)
                         
             return image
-            
+        # Here in this code, backtracking is not required because we are filling the cell with new color and adding the check in base condition that if given cell color is not old color, then just simply return and since we are adding the newColor if we are moving to the cell, then we dont need the backtracking of any kind or to change the given cell with any other value.    
         oldColor = image[sr][sc]
         n = len(image)
         m = len(image[0])        

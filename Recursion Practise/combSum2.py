@@ -1,3 +1,4 @@
+# number cant be repeated in the givne combination
 ans=[]
 def combSum(arr, index, tempAns, target, tempSum):
     if tempSum == target:

@@ -1,3 +1,4 @@
+# number can be repeated in the givne combination
 ans = []
 def combSum(arr, index, tempAns, tempTarget, target):
 

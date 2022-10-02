@@ -1,6 +1,4 @@
-from math import comb
-
-
+#for given range of numbers, find the n numbers that has sum equal to given target
 ans = []
 def combSum3(arr, target, tempAns, index, tempTarget, n):
 
